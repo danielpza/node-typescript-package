@@ -14,10 +14,10 @@
   ],
   "scripts": {
     "build": "tsc",
-    "prepack": "npm run build",
+    "prepack": "node --run build",
     "release": "changelogen --release --push",
     "format": "prettier --write .",
-    "lint": "npm run lint:prettier && npm run lint:types",
+    "lint": "node --run lint:prettier && node --run lint:types",
     "lint:prettier": "prettier --check .",
     "lint:types": "tsc --noEmit",
     "tdd": "node --test --import tsx --watch '**/*.test.ts'",
