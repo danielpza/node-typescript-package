@@ -6,6 +6,7 @@
   "exports": {
     ".": {
       "types": "lib/index.d.ts",
+      "require": "lib/index.cjs",
       "default": "lib/index.js"
     }
   },
@@ -13,7 +14,7 @@
     "lib"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsdown",
     "prepack": "node --run build",
     "release": "changelogen --release --push",
     "format": "prettier --write .",
@@ -25,6 +26,14 @@
   },
   "keywords": [],
   "license": "MIT",
+  "tsdown": {
+    "outDir": "lib",
+    "format": [
+      "esm",
+      "cjs"
+    ],
+    "dts": true
+  },
   "directories": {
     "lib": "lib"
   },
@@ -33,6 +42,7 @@
     "@types/node": "^22.15.24",
     "changelogen": "^0.6.1",
     "prettier": "^3.5.3",
+    "tsdown": "^0.12.4",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3"
   }
